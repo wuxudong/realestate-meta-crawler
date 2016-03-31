@@ -19,17 +19,17 @@ def crawl_check():
 
     records_desc = soup.select('table')[-1].tr.find_all('td')[0].string
     records_count = re.search(u"共有(\d+)条记录", records_desc).group(1)
-    print(u'条数:' + records_count)
+    print(u'total_count:' + records_count)
 
     page_desc = soup.select('table')[-1].tr.find_all('td')[5].string
     pages_count = re.search(u"页次：\d+/(\d+)页", page_desc).group(1)
 
-    print(u'页数:' + pages_count)
+    print(u'page_count:' + pages_count)
 
     records = []
 
     for i in xrange(1, int(pages_count)):
-        print(u'处理页:' + str(i))
+        print(u'current_page:' + str(i))
 
         page_url = url + '?pagenumber=' + str(i)
         page_req = urllib2.Request(page_url)
