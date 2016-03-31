@@ -29,6 +29,8 @@ def crawl_check():
     records = []
 
     for i in xrange(1, int(pages_count)):
+        print(u'处理页:' + str(i))
+
         page_url = url + '?pagenumber=' + str(i)
         page_req = urllib2.Request(page_url)
         page_html = urllib2.urlopen(page_req).read()
