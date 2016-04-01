@@ -1,0 +1,873 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>存量房交易服务平台</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<script src="/SHH/script/base.js" language="javascript"></script><script src="/SHH/script/calendar.js" language="javascript"></script><script src="/SHH/script/form.js" language="javascript"></script><script src="/SHH/script/zDialog.js" language="javascript"></script><script src="/SHH/script/zDrag.js" language="javascript"></script><script src="/SHH/script/epass.js" language="javascript"></script><script src="/SHH/script/default.js" language="javascript"></script><script src="/SHH/script/CNLTreeMenu.js" language="javascript"></script>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="webtop"><iframe src="http://www.bjjs.gov.cn/tabid/3947/Default.aspx" style="width:100%;height:100%;border:0px" frameborder="0"></iframe></div>
+<div style="overflow:hidden;height:10px;"></div>
+
+<div class="container">
+    <div class="box730l">
+		<!--查询&列表begin-->
+		<div class="Title730">
+			<div class="toolbar01">
+				<ul><li><a><span>存量房查询</span></a></li></ul>
+			</div>
+		</div>
+		<div class="boxconn">				
+			<!--查询Begin-->
+			<!--查询Begin-->
+
+<div class="tContent">
+	<ul id="Cont02" style="height:110px;">
+		<li style="display:block">
+		<div style="overflow:hidden;height:10px;"></div>
+		<FORM id="FORM1" encType="multipart/form-data" method="post" name="dataform" action="audit_house_list.aspx" onsubmit="javascript:return house_audit_form_onsubmit()">
+		<table>
+			<tbody>
+				<tr>
+					<th width="60" height="33">区&nbsp;&nbsp;&nbsp;&nbsp;县：</th>
+					<td width="80"><select name="district_id" id="district_id" class="Select" style="width:70px;">
+							<option value="" selected>请选择</option><option value="2">东城区</option><option value="3">西城区</option><option value="6">朝阳区</option><option value="7">海淀区</option><option value="8">丰台区</option><option value="9">石景山区</option><option value="10">通州区</option><option value="11">房山区</option><option value="12">顺义区</option><option value="13">门头沟区</option><option value="14">大兴区</option><option value="15">怀柔区</option><option value="16">密云县</option><option value="17">昌平区</option><option value="18">延庆县</option><option value="19">平谷区</option><option value="22">北京经济技术开发区</option>
+					</select></td>
+					<th width="60">小区名称：</th>
+					<td width="120"><input type="text" name="plot" id="plot" class="Input" style="width:110px;"/></td>
+					<th width="60">拟售价格：</th>
+					<td width="120"><input type="text" name="sell_money_from" id="sell_money_from" class="Input" style="width:30px;"/>
+						至
+						<input type="text" name="sell_money_to" id="sell_money_to" class="Input" style="width:30px;"/>
+						万元</td>
+					<th width="50">户型：</th>
+					<td width="80"><select name="set_type" id="set_type" class="Select" style="width:80px;">
+							<option value="">请选择</option><option value="11">一室</option><option value="1">一室一厅</option><option value="12">一室二厅</option><option value="2">二室一厅</option><option value="3">二室二厅</option><option value="4">三室一厅</option><option value="5">三室二厅</option><option value="6">四室一厅</option><option value="7">四室二厅</option><option value="8">复式</option><option value="9">别墅</option><option value="10">其它</option></select>
+					</select></td>
+				</tr>
+				<tr>
+					<th height="33">发布方式：</th>
+					<td><select name="organize_type" id="organize_type" class="Select" style="width:70px;">
+							 <option value="" selected="">请选择</option>
+			            <option value="3">经纪机构代理发布</option>
+			            <option value="2">自行发布</option></select>
+					</select></td>
+					<th>经纪机构：</th>
+					<td><input type="text" name="broker_title" id="broker_title" class="Input" style="width:110px;"/></td>
+					<th>面&nbsp;&nbsp;&nbsp;&nbsp;积：</th>
+					<td><label>
+						<input type="text" name="buildarea_from" id="buildarea_from" class="Input" style="width:30px;"/>
+						至
+						<input type="text" name="buildarea_to" id="buildarea_to" class="Input" style="width:30px;"/>
+						平米 </label></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th height="33">核验编号：</th>
+					<td><input type="text" name="house_from_cert_id" id="house_from_cert_id" class="Input" style="width:70px;"/></td>
+					<th>核验日期：</th>
+					<td><input type="text" name="audit_on" id="audit_on" class="Inpdate" style="width:110px;"/>
+					<IMG onclick="javascript:DoSelectDate($('audit_on'), '1900-01-01','yyyy-MM-dd');" src="images/dail.gif"></td>
+					<th>用　　途：</th>
+					<td><select name="design_usage" id="design_usage" class="Select" style="width:110px;">
+							<option value="0">全部</option>
+							<option value="1" selected>住宅</option>
+		                    <option value="2">非住宅</option>
+					</select></td>
+					<th colspan="2"><input name="" type="image" src="images/but_query01.jpg"></th>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		</li>
+		<li style="display:none">
+		<div style="overflow:hidden;height:10px;"></div>
+		2
+		</li>
+	</ul>
+</div>
+	<script language="javascript">
+	function house_audit_form_onsubmit()
+    {
+        var Validation=new formValidator("存量房交易服务平台",1)
+        Validation.add("house_from_cert_id","核验编号",3,true,"",true,"",true,"");
+        Validation.add("plot","小区名称",1,true,"1",true,"50",true,"");
+        Validation.add("sell_money_from","拟售价格下限",2,true,"",true,"",true,"");
+        Validation.add("sell_money_to","拟售价格上限",2,true,"",true,"",true,"");
+        Validation.add("district_id","区县",10,true,"",true,"",true,"");
+        Validation.add("organize_type","发布方式",10,true,"",true,"",true,"");
+        Validation.add("design_usage","用途",10,true,"",true,"",true,"");
+        Validation.add("set_type","户型",10,true,"",true,"",true,"");
+        Validation.add("audit_on","核验日期",7,true,"",true,"",true,"");
+        Validation.add("broker_title","经纪机构",1,true,"1",true,"100",true,"");
+        Validation.add("buildarea_from","面积下限",2,true,"",true,"",true,"");
+        Validation.add("buildarea_to","面积上限",2,true,"",true,"",true,"");
+        
+        if (getElement("sell_money_from").value.isNumber() && getElement("sell_money_to").value.isNumber())
+        {
+            if (getElement("sell_money_from").value.toNumber() >= getElement("sell_money_to").value.toNumber())
+            {
+                alert("拟售价格下限不能大于等于拟售价格上限");return false;
+            }
+        }
+        if (getElement("buildarea_from").value.isNumber() && getElement("buildarea_to").value.isNumber())
+        {
+            if (getElement("buildarea_from").value.toNumber() >= getElement("buildarea_to").value.toNumber())
+            {
+                alert("面积下限不能大于等于面积上限");return false;
+            }
+        }
+        
+        if (!Validation.validateAll()) return false;
+        return true;
+    }
+    document.getElementById("if_show_all_query_field").value=""
+	document.getElementById("house_from_cert_id").value=""
+	document.getElementById("organize_type").value=""
+	document.getElementById("broker_title").value=""
+	document.getElementById("district_id").value=""
+	document.getElementById("plot").value=""
+	document.getElementById("design_usage").value=""
+	document.getElementById("set_type").value=""
+	document.getElementById("buildarea_from").value=""
+	document.getElementById("buildarea_to").value=""
+	document.getElementById("sell_money_from").value=""
+	document.getElementById("sell_money_to").value=""
+	document.getElementById("audit_on").value=""
+	function show_all_query_fields(_onoff)
+	{
+		getElement("if_show_all_query_field").value=_onoff
+		if (_onoff==1)
+		{
+			setVisible("query_fields_1",true);
+			setVisible("query_fields_2",true)
+			setVisible("query_fields_3",true)
+			setVisible("close_all_query_field",true)
+			setVisible("show_all_query_field",false)
+			setVisible("imageField2",false)
+		}
+		else
+		{
+			setVisible("query_fields_1",false);
+			setVisible("query_fields_2",false)
+			setVisible("query_fields_3",false)
+			setVisible("close_all_query_field",false)
+			setVisible("show_all_query_field",true)
+			setVisible("imageField2",true)
+			
+			getElement("organize_type").value=""
+			getElement("broker_title").value=""
+			getElement("buildarea_from").value=""
+			getElement("buildarea_to").value=""
+			getElement("set_type").value=""
+			getElement("house_from_cert_id").value=""
+			getElement("audit_on").value=""
+			getElement("design_usage").value=""
+		}
+    }
+    show_all_query_fields(1);
+	</script>
+<!--查询End-->
+			<!--查询End-->
+			<div style="overflow:hidden;height:10px;"></div>
+			<table class="houseList">
+				<caption><span>房源核验列表</span></caption>
+				<thead>
+					<tr>
+						<th width="60">核验编号</th>
+						<th width="60">区县</th>
+						<th width="100">小区名称</th>
+						<th width="80">户型</th>
+						<th width="60">面积</th>
+						<th width="60">拟售价格</th>
+						<th width="120">发布机构</th>
+						<th width="70">时间</th>
+						<th width="50">详细</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+	                <tr>
+	                <td>1488855</td>
+	                <td>密云县</td>
+	                <td>密云县城北小区</td>
+	                <td>二室一厅</td>
+	                <td>81.37</td>
+	                <td>81万元</td>
+	                <td class="left">&nbsp;北京吉永达房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509396"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1488859</td>
+	                <td>密云县</td>
+	                <td>密云县城西小区</td>
+	                <td>三室二厅</td>
+	                <td>123.08</td>
+	                <td>123万元</td>
+	                <td class="left">&nbsp;北京吉永达房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509395"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1495254</td>
+	                <td>门头沟区</td>
+	                <td>向阳楼</td>
+	                <td>二室一厅</td>
+	                <td>49.42</td>
+	                <td>102万元</td>
+	                <td class="left">&nbsp;北京链家房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509394"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1485932</td>
+	                <td>门头沟区</td>
+	                <td>倚山嘉园</td>
+	                <td>三室一厅</td>
+	                <td>100.30</td>
+	                <td>223万元</td>
+	                <td class="left">&nbsp;北京金城阜业房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509393"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1486160</td>
+	                <td>门头沟区</td>
+	                <td>滨河德露苑</td>
+	                <td>复式</td>
+	                <td>150.38</td>
+	                <td>300万元</td>
+	                <td class="left">&nbsp;北京金城阜业房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509392"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1488038</td>
+	                <td>门头沟区</td>
+	                <td>倚山嘉园</td>
+	                <td>一室一厅</td>
+	                <td>71.73</td>
+	                <td>164万元</td>
+	                <td class="left">&nbsp;北京链家房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509391"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1486695</td>
+	                <td>门头沟区</td>
+	                <td>峪园</td>
+	                <td>二室一厅</td>
+	                <td>61.14</td>
+	                <td>138万元</td>
+	                <td class="left">&nbsp;北京金城阜业房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509390"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1486775</td>
+	                <td>密云县</td>
+	                <td>密云县城中小区</td>
+	                <td>二室二厅</td>
+	                <td>109.56</td>
+	                <td>152万元</td>
+	                <td class="left">&nbsp;北京捷捷兴业房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509388"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1488381</td>
+	                <td>密云县</td>
+	                <td>密云县城北小区</td>
+	                <td>三室一厅</td>
+	                <td>104.76</td>
+	                <td>115万元</td>
+	                <td class="left">&nbsp;北京捷捷兴业房地产经纪有限公司</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509387"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1457846</td>
+	                <td>密云县</td>
+	                <td>密云县城西小区</td>
+	                <td>二室二厅</td>
+	                <td>94.15</td>
+	                <td>149万元</td>
+	                <td class="left">&nbsp;自行发布</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509382"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1489879</td>
+	                <td>密云县</td>
+	                <td>密云县城北小区</td>
+	                <td>二室一厅</td>
+	                <td>64.02</td>
+	                <td>100万元</td>
+	                <td class="left">&nbsp;自行发布</td>
+	                <td>2016-04-01</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509379"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1488641</td>
+	                <td>丰台区</td>
+	                <td>东大街35号院</td>
+	                <td>二室一厅</td>
+	                <td>58.01</td>
+	                <td>150万元</td>
+	                <td class="left">&nbsp;北京链家房地产经纪有限公司</td>
+	                <td>2016-03-31</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509285"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+	                <tr>
+	                <td>1494575</td>
+	                <td>丰台区</td>
+	                <td>丰台南路116号院</td>
+	                <td>二室一厅</td>
+	                <td>91.26</td>
+	                <td>266.50万元</td>
+	                <td class="left">&nbsp;北京我爱我家房地产经纪有限公司</td>
+	                <td>2016-03-31</td>
+	                <td><a href="audit_house_detail.aspx?House_Id=1509277"><img src="images/icon_show.gif" width="16" height="16" border="0"></a></td>
+	                </tr>
+	                
+				</tbody>
+			</table>
+			<div style="padding:5px 10px;color:red;">注1：拟售价格仅供参考，实际成交价格由买卖双方自行商定。<br>注2：经适房、央产房等政策保障性住房按国家和本市相关政策执行。</div>
+			<div style="overflow:hidden;height:10px;"></div>
+		</div>
+		<!--查询&列表end-->
+	</div>
+	<div class="box262r">
+		<!--右侧begin-->
+		<script language="javascript" src="../../script/epass.js"></script>
+<script language="javascript">
+function login_onsubmit()
+{
+    var Validation=new formValidator("存量房交易服务平台",1)
+	Validation.add("username","用户名",1,false,"1",true,"20",true,"");
+	Validation.add("password","密码",1,false,"1",true,"20",true,"");
+		
+	if (!Validation.validateAll()){
+	    return false;    
+    }
+		
+	var epassInfo=EpassCheck("epass","");
+		
+	if (epassInfo.errcode!=0)
+	{
+	    alert(epassInfo.errdesc);
+		return false;
+    }
+		
+	document.getElementById("keyid").value=epassInfo.keyid;
+	document.getElementById("digest").value=epassInfo.digest;
+	return true;
+}
+</script>
+<div class="Title262">存量房交易服务平台</div>
+<div class="boxconn">
+	<div class="box258" style="height:120px;">
+	<div style="overflow:hidden;height:10px;"></div>
+    <form id="login_form" name="login_form" method="post" action="../../login.aspx" onsubmit="javascript:return login_onsubmit();">
+    <input type="hidden" name="keyid" id="keyid">
+    <input type="hidden" name="digest" id="digest">
+    <input type="hidden" name="postback" id="postback" value="1">
+	<table>
+		<tbody>
+			<tr>
+				<th width="70" height="33">用&nbsp;户&nbsp;名：</th>
+				<td width="170"><input type="text" name="username" id="username" class="Input" style="width:160px;"/></td>
+			</tr>
+			<tr>
+				<th height="33">密&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
+				<td><input type="password" name="password" id="password"  class="Input" style="width:160px;"/></td>
+			</tr>
+			<tr>
+				<td height="33" colspan="2" class="center"><input name="" type="image" src="images/but_login.jpg"></td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+	</div>
+</div>
+		<div style="overflow:hidden;height:10px;"></div>		
+		<div class="Title262">便民查询</div>
+		<div class="boxconn">
+			<div class="box258" style="height:140px;">
+				<script language="javascript">
+function houseauditresultform_onsubmit()
+{    
+    var Validation=new formValidator("存量房交易服务平台",1)
+    Validation.add("audit_id","核验编号",1,false,"1",true,"20",true,"");
+    Validation.add("audit_password","密码",1,false,"1",true,"20",true,"");
+
+    if (!Validation.validateAll()) return false;
+    return true;
+}
+</script>
+<div class="Title258">房源核验信息查询</div>
+<form id="houseauditresultform" name="houseauditresultform" method="post" enctype="multipart/form-data" action="audit_house.aspx" onsubmit="javascript:return houseauditresultform_onsubmit()">
+<table>
+	<tbody>
+		<tr>
+			<th width="70" height="33">核验编号：</th>
+			<td width="170"><input type="text" name="audit_id" id="audit_id" class="Input" style="width:160px;"/></td>
+		</tr>
+		<tr>
+			<th height="33">密&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
+			<td><input type="password" name="audit_password" id="audit_password" class="Input" style="width:160px;"/></td>
+		</tr>
+		<tr>
+			<td height="33" colspan="2" class="center"><input name="" type="image" src="images/but_query02.jpg"></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+			</div>
+			
+			<div class="xuline" style="overflow:hidden;height:10px;"></div>
+			
+			<div class="box258" style="height:170px;">
+				<div class="Title258">存量房合同网上签约查询</div>
+<form id="contractqueryform" name="contractqueryform" method="post" enctype="multipart/form-data" action="Contract_Result_Info.aspx" onsubmit="javascript:return contractqueryform_onsubmit()">
+<table>
+	<tbody>
+		<tr>
+			<th width="70" height="33">合&nbsp;同&nbsp;号：</th>
+			<td width="170"><input type="text" name="contractno" id="contractno" class="Input" style="width:160px;"/></td>
+		</tr>
+		<tr>
+			<th height="33">密&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
+			<td><input type="password" name="contract_password" id="contract_password" class="Input" style="width:160px;"/></td>
+		</tr>
+		<tr>
+			<th height="33">签约方：</th>
+			<td><select name="people_type" id="people_type" class="Select" style="width:160px"> 
+            <option value="" selected>请选择</option>
+            <option value="1">出卖人</option>
+            <option value="2">买受人</option>
+            </select></td>
+		</tr>
+		<tr>
+			<td height="33" colspan="2" class="center"><input name="" type="image" src="images/but_query02.jpg"></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<script language="javascript">
+function contractqueryform_onsubmit()
+{
+    var Validation=new formValidator("存量房交易服务平台",1)
+    Validation.add("contractno","合同号",1,false,"1",true,"20",true,"");
+    Validation.add("contract_password","密码",1,false,"1",true,"20",true,"");
+    Validation.add("people_type","签约方",10,false,"1",true,"2",true,"");
+    
+    if (!Validation.validateAll()) return false;
+    return true;
+}
+</script>
+
+			</div>
+			
+		</div>
+		<div style="overflow:hidden;height:10px;"></div>
+		<a href="http://www.bjjs.gov.cn/publish/portal0/tab3894/"><img src="images/img_legend.jpg" width="262" height="50" border="0"></a>
+		<div style="overflow:hidden;height:10px;"></div>
+		<a href="http://www.bjjs.gov.cn/tabid/662/InfoID/76584/frtid/1192/Default.aspx"><img src="images/img_tz.jpg" width="262" height="67" border="0"></a>
+		<div style="overflow:hidden;height:10px;"></div>
+		<a href="http://www.bjjs.gov.cn/publish/portal0/tab3895/"><img src="images/img_consult.jpg" width="262" height="67" border="0"></a>
+	    <!--右侧end-->
+	</div>
+	
+	<div style="overflow:hidden; width:100%;height:10px;"></div>
+	
+	<div class="box1000">
+		<!--滚动banner开始-->
+		<div class="adyh" id=oTransContainer>
+			<script>
+				var NowFrame = 1;
+				var MaxFrame = 4;
+				var bStart = 0;
+				function fnToggle(){var next = NowFrame + 1;
+					if(next == MaxFrame+1)
+						 {NowFrame = MaxFrame;next = 1;}
+						 if(bStart == 0)
+							{bStart = 1;setTimeout('fnToggle()', 2000);return;}
+							else{oTransContainer.filters[0].Apply();document.images['oDIV'+next].style.display = "";
+							document.images['oDIV'+NowFrame].style.display = "none";
+							oTransContainer.filters[0].Play(duration=2);
+							if(NowFrame == MaxFrame)
+								{NowFrame = 1;}else{NowFrame++;}
+								}
+							setTimeout('fnToggle()', 6000);
+						}
+					fnToggle();
+				</script>
+			<img id=oDIV1 src="images/banner_hd01.jpg" border="0" width="1000" height="130" style="display:;" />
+			<img id=oDIV2 src="images/banner_hd02.jpg" border="0" width="1000" height="130" style="display:none;" />
+			<img id=oDIV3 src="images/banner_hd03.jpg" border="0" width="1000" height="130" style="display:none;" />
+			<img id=oDIV4 src="images/banner_hd04.jpg" border="0" width="1000" height="130" style="display:none;" />
+		</div>
+		<!--滚动banner结束-->
+		<div style="overflow:hidden;height:10px;"></div>
+		<!--月统计begin-->
+		<div class="Title1000">
+			<div class="toolbar01">
+				<ul><li><a><span>存量房网上签约月统计</span></a></li></ul>
+			</div>
+			<div style="width:350px;height:35px;float:left;font:normal 12px/35px '宋体';color:#999; text-align:right">(2016年2月统计结果)</div>
+		</div>
+		<div class="boxconn">
+			<div style="overflow:hidden;height:10px;"></div>
+			<script language="JavaScript" type="text/javascript">
+			function toolBoard03(n)
+			{
+				var toolbar03 = document.getElementById("toolbar03").getElementsByTagName('li');
+				for(i=0;i<toolbar03.length;i++)
+				toolbar03[i].className="";
+				toolbar03[n].className="t02ON";
+				var Cont03 = document.getElementById("Cont03").getElementsByTagName('li');
+				for(i=0;i<Cont03.length;i++)
+				Cont03[i].style.display="none";
+				Cont03[n].style.display="block";
+			}
+			</script>
+			<div class="toolbar02">
+				<ul id="toolbar03">
+					<li onMouseDown="toolBoard03(0)" class="t02ON"><a><span>按经纪机构</span></a></li>
+					<li onMouseDown="toolBoard03(1)" class=""><a><span>按所在区县</span></a></li>
+					<li onMouseDown="toolBoard03(2)" class=""><a><span>按建筑面积</span></a></li>
+				</ul>
+			</div>
+			<div class="tContent">
+				<ul id="Cont03" style="height:205px;">
+					<li style="display:block">
+					<div style="padding:10px;width:469px;float:left;">
+					<table class="tjInfo01">
+						<thead>
+							<tr>
+								<th width="30">序<br>号</th>
+								<th width="285">房地产经纪机构名称</th>
+								<th width="50">发布<br>套数</th>
+								<th width="50">签约<br>套数</th>
+								<th width="50">退房<br>套数</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+					<tr>
+					<td>1</td>
+					<td align="left">北京链家房地产经纪有限公司</td>
+					<td>3168</td>
+					<td>7644</td>
+					<td>242</td></tr>
+				    
+					<tr>
+					<td>2</td>
+					<td align="left">北京我爱我家房地产经纪有限公司</td>
+					<td>799</td>
+					<td>1930</td>
+					<td>62</td></tr>
+				    
+					<tr>
+					<td>3</td>
+					<td align="left">北京存房房地产经纪有限公司</td>
+					<td>282</td>
+					<td>746</td>
+					<td>48</td></tr>
+				    
+					<tr>
+					<td>4</td>
+					<td align="left">北京麦田房产经纪有限公司</td>
+					<td>180</td>
+					<td>724</td>
+					<td>29</td></tr>
+				    
+					<tr>
+					<td>5</td>
+					<td align="left">满懿（北京）房地产咨询有限公司</td>
+					<td>48</td>
+					<td>338</td>
+					<td>26</td></tr>
+				    
+						</tbody>
+					</table>
+					</div>
+					<div style="padding:10px;width:469px;float:left;">
+					<table class="tjInfo01">
+						<thead>
+							<tr>
+								<th width="30">序<br>号</th>
+								<th width="285">房地产经纪机构名称</th>
+								<th width="50">发布<br>套数</th>
+								<th width="50">签约<br>套数</th>
+								<th width="50">退房<br>套数</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+					<tr>
+					<td>6</td>
+					<td align="left">北京金色时光房地产经纪有限公司</td>
+					<td>42</td>
+					<td>237</td>
+					<td>32</td></tr>
+				    
+					<tr>
+					<td>7</td>
+					<td align="left">北京华熙房地产经纪有限公司</td>
+					<td>158</td>
+					<td>198</td>
+					<td>6</td></tr>
+				    
+					<tr>
+					<td>8</td>
+					<td align="left">北京中原房地产经纪有限公司</td>
+					<td>83</td>
+					<td>154</td>
+					<td>13</td></tr>
+				    
+					<tr>
+					<td>9</td>
+					<td align="left">北京市易合房地产经纪有限责任公司</td>
+					<td>0</td>
+					<td>96</td>
+					<td>4</td></tr>
+				    
+					<tr>
+					<td>10</td>
+					<td align="left">北京博爱房地产经纪有限责任公司</td>
+					<td>1</td>
+					<td>78</td>
+					<td>2</td></tr>
+				    
+						</tbody>
+					</table>
+					</div>
+					</li>
+					<li style="display:none">
+					<div style="padding:10px;width:958px;">
+					<table width="100%" class="tjInfo01">
+						<tbody>
+							<tr>
+								<th width="80">区&nbsp;&nbsp;&nbsp;&nbsp;县</th>
+								<th>全　市</th>
+								<th>东　城</th>
+								<th>西　城</th>
+								<th>崇　文</th>
+								<th>宣　武</th>
+								<th>朝　阳</th>
+								<th>海　淀</th>
+								<th>丰　台</th>
+								<th>石景山</th>
+								<th>通　州</th>
+							</tr>
+							<tr>
+						<th>套&nbsp;&nbsp;&nbsp;&nbsp;数</th>
+						<td>16583</td>
+				        <td>712</td>
+				        <td>1032</td>
+				        <td>0</td>
+				        <td>0</td>
+				        <td>4636</td>
+				        <td>2049</td>
+				        <td>1685</td>
+				        <td>433</td>
+				        <td>674</td>
+					    </tr>
+					    <tr>
+						    <th>成交面积(m<sup>2</sup>)</th>
+						    <td>1520722</td>
+				            <td>54606.14</td>
+				            <td>71529.52</td>
+				            <td>0</td>
+				            <td>0</td>
+				            <td>420557.52</td>
+				            <td>180860.98</td>
+				            <td>135842.44</td>
+				            <td>32050.46</td>
+				            <td>66018.61</td>
+					    </tr>
+					    <tr>
+						    <th>区&nbsp;&nbsp;&nbsp;&nbsp;县</th>
+						    <th>房　山</th>
+						    <th>顺　义</th>
+						    <th>门头沟</th>
+						    <th>大　兴</th>
+						    <th>怀　柔</th>
+						    <th>密　云</th>
+						    <th>昌　平</th>
+						    <th>延　庆</th>
+						    <th>平　谷</th>
+						    <th>开发区</th>
+					    </tr>
+					    <th>套&nbsp;&nbsp;&nbsp;&nbsp;数</td>
+				        <td>726</td>
+				        <td>922</td>
+				        <td>140</td>
+				        <td>895</td>
+				        <td>135</td>
+				        <td>444</td>
+				        <td>1579</td>
+				        <td>112</td>
+				        <td>209</td>
+				        <td>200</td>
+				        </tr>
+				        <tr>
+				        <th>成交面积[m<sup>2</sup>]</td>
+				        <td>64198.31</td>
+				        <td>132835.15</td>
+				        <td>11330.65</td>
+				        <td>82370.48</td>
+				        <td>12868.54</td>
+				        <td>41188.43</td>
+				        <td>164830.53</td>
+				        <td>10380.84</td>
+				        <td>20066.03</td>
+				        <td>19187.68</td>
+				        </tr>
+						</tbody>
+					</table>
+					</div>
+					</li>
+					<li style="display:none">
+					<div style="padding:10px;width:958px;">
+					<table width="100%" class="tjInfo01">
+						<tbody>
+							<tr>
+								<th width="150">面　　积</th>
+								<th>60m<sup>2</sup>以下</th>
+								<th>60～80m<sup>2</sup></th>
+								<th >80～100m<sup>2</sup></th>
+								<th>100～120m<sup>2</sup></th>
+								<th>120～140m<sup>2</sup></th>
+								<th>140m<sup>2</sup>以上</th>
+							</tr>
+							<tr>
+				            <th>发布套数<!--(按拟售价格)--></td>
+				            <td>3564</td>
+				            <td>3067</td>
+				            <td>2837</td>
+				            <td>1341</td>
+				            <td>1015</td>
+				            <td>1293</td>
+				            </tr>
+				            <tr>
+				            <th>发布面积(m<sup>2</sup>)</td>
+				            <td>172684.19</td>
+				            <td>211370.28</td>
+				            <td>255258.70</td>
+				            <td>145986.40</td>
+				            <td>131548.23</td>
+				            <td>246898.17</td>
+				            </tr>
+				            <tr>
+				            <th>成交套数<!--(按成交价格)--></td>
+				            <td>4479</td>
+				            <td>3718</td>
+				            <td>3684</td>
+				            <td>1812</td>
+				            <td>1279</td>
+				            <td>1580</td>
+				            </tr>
+				            <tr>
+				            <th>成交面积(m<sup>2</sup>)</td>
+				            <td>213579.05</td>
+				            <td>256212.04</td>
+				            <td>331443.95</td>
+				            <td>196880.61</td>
+				            <td>165815.31</td>
+				            <td>356791.35</td>
+				            </tr>
+						</tbody>
+					</table>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--月统计end-->
+		<div style="overflow:hidden;height:10px;"></div>
+		<!--统计begin-->
+		<div class="Title1000">
+			<div class="toolbar01">
+				<ul><li><a><span>存量房网上签约统计</span></a></li></ul>
+			</div>
+		</div>
+		<div class="boxconn">
+			<div class="tContent">
+				<ul style="height:160px;">
+					<li style="display:block">
+					<div style="padding:10px;width:306px;float:left;">
+					<table class="tjInfo" width="100%">
+						<thead>
+							<tr><th colspan="2">2016-03-31核验房源</th></tr>
+						</thead>
+						<tbody>							
+							<tr><th width="150">核验房源套数：</th><td>633</td></tr>
+							<tr><th>核验房源面积(m<sup>2</sup>)：</th><td>53808.56</td></tr>
+							<tr><th>核验住宅套数：</th><td>567</td></tr>
+							<tr><th>核验住宅面积(m<sup>2</sup>)：</th><td>48156.27</td></tr>
+						</tbody>
+					</table>
+					</div>
+					<div style="padding:10px;width:306px;float:left;">
+					<table class="tjInfo" width="100%">
+						<thead>
+							<tr><th colspan="2">2016年2月存量房网上签约</th></tr>
+						</thead>
+						<tbody>
+							<tr><th width="150">网上签约套数：</th><td>16583</td></tr>
+							<tr><th>网上签约面积(m<sup>2</sup>)：</th><td>1520722.31</td></tr>
+							<tr><th>住宅签约套数：</th><td>15149</td></tr>
+							<tr><th>住宅签约面积(m<sup>2</sup>)：</th><td>1378375.79</td></tr>
+						</tbody>
+					</table>
+					</div>
+					<div style="padding:10px;width:306px;float:left;">
+					<table class="tjInfo" width="100%">
+						<thead>
+							<tr><th colspan="2">2016-03-31存量房网上签约</th></tr>
+						</thead>
+						<tbody>
+							<tr><th width="150">网上签约套数：</th><td>2284</td></tr>
+							<tr><th>网上签约面积(m<sup>2</sup>)：</th><td>207060.73</td></tr>
+							<tr><th>住宅签约套数：</th><td>2084</td></tr>
+							<tr><th>住宅签约面积(m<sup>2</sup>)：</th><td>190893.72</td></tr>
+						</tbody>
+					</table>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--统计end-->
+		</div>
+</div>
+
+<div style="overflow:hidden;height:10px;"></div>
+<div class="webfoot">
+	<iframe src="http://www.bjjs.gov.cn/tabid/3948/Default.aspx" style="width:100%;height:100%;border:0px" frameborder=0></iframe>
+</div>
+
+<div style="overflow:hidden;height:10px;"></div>
+
+</body>
+</html>
