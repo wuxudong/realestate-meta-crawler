@@ -4,11 +4,12 @@ __author__ = 'xudong'
 
 import urllib2
 from datetime import datetime
-
+import pytz
 from bs4 import BeautifulSoup
 import re
 
 from check_statistics import *
+from global_constant.constant import *
 
 
 def crawl_register_statistics():
@@ -40,7 +41,7 @@ def parse_check_statistics_table(table):
     date_content = table.select('thead tr th')[0].string
     date_string = re.search(u"([\d|-]+)核验房源", date_content).group(1)
 
-    date = datetime.strptime(date_string, "%Y-%m-%d").date()
+    date = default_tz.localize(datetime.strptime(date_string, "%Y-%m-%d"))
 
     record = CheckStatistics()
     record.set(CHECK_STATISTICS_DATE, date)

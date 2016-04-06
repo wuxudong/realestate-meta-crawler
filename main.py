@@ -12,12 +12,10 @@ from check_statistics.check_statistics import *
 from check_statistics import check_statistics_crawler
 
 
-
 leancloud.init('30WAnGl011OU88WAGBH5dmuz-gzGzoHsz', 'eBxQv0goJVso11f6zx6lbRJm')
 
 
 def main():
-
     try:
         query = Query(RegisterStatistics)
         query.count()

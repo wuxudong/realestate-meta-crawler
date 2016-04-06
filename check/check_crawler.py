@@ -7,6 +7,7 @@ import urllib2
 from bs4 import BeautifulSoup
 import re
 from datetime import datetime
+from global_constant.constant import *
 
 
 def crawl_check():
@@ -53,7 +54,8 @@ def parse_table(table):
         check_area = float(tds[4].string)
         check_price = tds[5].string
         check_agent = tds[6].string.strip()
-        check_date = datetime.strptime(tds[7].string, '%Y-%m-%d').date()
+
+        check_date = default_tz.localize(datetime.strptime(tds[7].string, '%Y-%m-%d'))
 
         check = Check()
         check.set(CHECK_ID, check_id)
