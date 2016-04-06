@@ -53,7 +53,7 @@ def parse_table(table):
         check_area = float(tds[4].string)
         check_price = tds[5].string
         check_agent = tds[6].string.strip()
-        check_date = datetime.strptime(tds[7].string, '%Y-%m-%d')
+        check_date = datetime.strptime(tds[7].string, '%Y-%m-%d').date()
 
         check = Check()
         check.set(CHECK_ID, check_id)

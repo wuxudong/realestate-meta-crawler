@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 from register_statistics import *
 
+
 def crawl_register_statistics():
     url = 'http://www.bjjs.gov.cn/tabid/2167/default.aspx'
 
@@ -36,7 +37,8 @@ def parse_forward_housing_delivery(table):
     residence_count = int(table.select('#ess_ctr5115_FDCJY_HouseTransactionStatist_residenceCount4')[0].string)
     residence_area = float(table.select('#ess_ctr5115_FDCJY_HouseTransactionStatist_residenceArea4')[0].string)
 
-    date = datetime.strptime(table.select("#ess_ctr5115_FDCJY_HouseTransactionStatist_timeMark2")[0].string, "%Y-%m-%d")
+    date = datetime.strptime(table.select("#ess_ctr5115_FDCJY_HouseTransactionStatist_timeMark2")[0].string,
+                             "%Y-%m-%d").date()
 
     register_type = REGISTER_TYPE_FORWARD_HOUSING_DELIVERY
 
@@ -58,7 +60,8 @@ def parse_complete_apartment(table):
     residence_count = int(table.select('#ess_ctr5115_FDCJY_HouseTransactionStatist_residenceCount8')[0].string)
     residence_area = float(table.select('#ess_ctr5115_FDCJY_HouseTransactionStatist_residenceArea8')[0].string)
 
-    date = datetime.strptime(table.select("#ess_ctr5115_FDCJY_HouseTransactionStatist_timeMark4")[0].string, "%Y-%m-%d")
+    date = datetime.strptime(table.select("#ess_ctr5115_FDCJY_HouseTransactionStatist_timeMark4")[0].string,
+                             "%Y-%m-%d").date()
 
     register_type = REGISTER_TYPE_COMPLETE_APARTMENT
 
@@ -80,7 +83,8 @@ def parse_second_hand_house(table):
     residence_count = int(table.select('#ess_ctr5112_FDCJY_SignOnlineStatistics_residenceCount4')[0].string)
     residence_area = float(table.select('#ess_ctr5112_FDCJY_SignOnlineStatistics_residenceArea4')[0].string)
 
-    date = datetime.strptime(table.select("#ess_ctr5112_FDCJY_SignOnlineStatistics_timeMark2")[0].string, "%Y-%m-%d")
+    date = datetime.strptime(table.select("#ess_ctr5112_FDCJY_SignOnlineStatistics_timeMark2")[0].string,
+                             "%Y-%m-%d").date()
     register_type = REGISTER_TYPE_SECOND_HAND_HOUSE
 
     record = RegisterStatistics()

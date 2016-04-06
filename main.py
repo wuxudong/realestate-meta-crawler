@@ -42,7 +42,7 @@ def main():
 
     for check_statistics in check_statistics_crawler.crawl_register_statistics():
         query = Query(CheckStatistics)
-        query.equal_to(CHECK_STATISTICS_DATE, statistics.get(CHECK_STATISTICS_DATE))
+        query.equal_to(CHECK_STATISTICS_DATE, check_statistics.get(CHECK_STATISTICS_DATE))
         if not query.find():
             check_statistics.save()
 
